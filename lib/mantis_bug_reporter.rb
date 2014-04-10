@@ -53,7 +53,7 @@ module MantisBugReporter
           :password => password,
           :issue => {
             :summary => removeUniqueIdentifier(summary),
-            :project =>  { :id => @project_id, :name => project_name }, # For some reason Mantis wants the id and the name
+            :project =>  { :id => project_id, :name => project_name }, # For some reason Mantis wants the id and the name
             :category => category,
             :description => description + "<br /> <br />" + additional_information
           }
