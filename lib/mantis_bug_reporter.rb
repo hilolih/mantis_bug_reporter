@@ -21,7 +21,7 @@ module MantisBugReporter
         soap.body = {
           username: username,
           password: password,
-          issue_id: issue_id
+          "issue_id" => issue_id
         }
       end
       if response.success?
@@ -35,7 +35,7 @@ module MantisBugReporter
         soap.body = {
           :username => username,
           :password => password,
-          :issue_id => issue_id,
+          "issue_id" => issue_id,
           :note => { text: note }
         }
       end
@@ -53,7 +53,7 @@ module MantisBugReporter
           :password => password,
           :issue => {
             :summary => removeUniqueIdentifier(summary),
-            :project =>  { :id => @project_id, :name => project_name }, # For some reason Mantis wants the id and the name
+            :project =>  { :id => project_id, :name => project_name }, # For some reason Mantis wants the id and the name
             :category => category,
             :description => description + "<br /> <br />" + additional_information
           }
@@ -67,7 +67,7 @@ module MantisBugReporter
         soap.body = {
           :username => username,
           :password => password,
-          :issue_id => issue_id
+          "issue_id" => issue_id
         }
       end
       if response.success?
@@ -81,7 +81,7 @@ module MantisBugReporter
         soap.body = {
           :username => username,
           :password => password,
-          :issue_id => issue[:id],
+          "issue_id" => issue[:id],
           :issue => issue
         }
       end
